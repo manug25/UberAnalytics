@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DataEngineerTestApp" />
+        <module name="UberAnalytics" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="DataEngineerTestApp" target="1.8" />
+      <module name="UberAnalytics" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

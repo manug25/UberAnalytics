@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DataEngineerTestApp.iml" filepath="$PROJECT_DIR$/DataEngineerTestApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UberAnalytics.iml" filepath="$PROJECT_DIR$/UberAnalytics.iml" />
     </modules>
   </component>
 </project>
