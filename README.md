@@ -1,8 +1,7 @@
 **Uber Analytics:**
 
-The purpose of this project is to gather data from online taxi cab and transportation network company, in our case Uber, from various sources, enrich the collected data and deliver it Data Science team for further analytics.
-During this test you will work a bit on all of these steps. Please follow the tasks in the given order and use the technologies listed below.  
-You may use any additional library that might help you and version of the technologies below, but we recommend sticking to the most recent one.  
+The purpose of this project is to gather data from online taxi cab and transportation network company, in our case Uber, from various sources, enrich the collected data
+and deliver it to Data Science team for further analytics.
 
 
 Technologies used:
