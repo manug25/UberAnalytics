@@ -4,7 +4,8 @@
 
 package com.manu.uberanalytics
 
-import com.manu.uberanalytics.postgres.{DataLoader, SparkConfig}
+import com.manu.uberanalytics.kafka.Producer
+import com.manu.uberanalytics.utils.{DataLoader, SparkConfig}
 import com.manu.uberanalytics.table.tableSchema
 import org.apache.spark.sql.functions._
 
@@ -15,10 +16,6 @@ object Application  extends SparkConfig{
     val driverPath = "F:\\data-engineer-applicant-test-7\\src\\main\\scala\\resources\\driver.csv"
     val passengerPath = "F:\\data-engineer-applicant-test-7\\src\\main\\scala\\resources\\passenger.csv"
     val bookingPath = "F:\\data-engineer-applicant-test-7\\src\\main\\scala\\resources\\booking.csv"
-
-    val employeePath= "F:\\data-engineer-applicant-test-7\\src\\main\\scala\\resources\\employee.csv"
-    val cost_empPath= "F:\\data-engineer-applicant-test-7\\src\\main\\scala\\resources\\cost.csv"
-
 
     val driverTableName = "driver"
     val passengerTableName = "passenger"
@@ -62,6 +59,10 @@ object Application  extends SparkConfig{
 
     val topPass = driverDF.join(
       bookingDF, driverDF("driverDF.id")=== bookingDF("bookingDF.id_driver"),"inner")
+
+//Publishing data to Kafka topic
+    Producer.toKafkaTopic("topPassenger", topPass)
+    Producer.toKafkaTopic("topDriver", topDriver)
 
   }
 }

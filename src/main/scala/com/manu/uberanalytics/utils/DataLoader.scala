@@ -2,7 +2,7 @@
   * Created by Manu Gupta on 10/16/2017.
   */
 
-package com.manu.uberanalytics.postgres
+package com.manu.uberanalytics.utils
 
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.types.StructType
