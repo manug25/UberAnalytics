@@ -1,4 +1,5 @@
-**Uber Analytics:**
+# Uber Analytics
+[![Travis Build Status](https://travis-ci.org/GouravRusiya30/UberAnalytics.svg?branch=master)](https://travis-ci.org/GouravRusiya30/UberAnalytics)
 
 The purpose of this project is to gather data from online taxi cab and transportation network company, in our case Uber, from various sources, enrich the collected data
 and deliver it to Data Science team for further analytics.
