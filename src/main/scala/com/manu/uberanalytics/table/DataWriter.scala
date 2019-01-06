@@ -8,6 +8,5 @@ object DataWriter {
     * @param tableName     : table name in db.
     */
   def toDB(connectionUrl: String, tableName: String): Unit = {
-
   }
 }
