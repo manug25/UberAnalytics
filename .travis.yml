@@ -1,4 +1,8 @@
-language: java
+language: scala
+
+scala:
+  - 2.11.8
+
 sudo: false # faster builds
 
 script: "mvn cobertura:cobertura"
