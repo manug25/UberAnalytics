@@ -1,6 +1,5 @@
 # Uber Analytics
 [![Travis Build Status](https://travis-ci.org/GouravRusiya30/UberAnalytics.svg?branch=master)](https://travis-ci.org/GouravRusiya30/UberAnalytics)
-[![sonar](https://sonarcloud.io/api/project_badges/measure?project=GouravRusiya30_UberAnalytics&metric=alert_status)](https://sonarcloud.io/dashboard?id=GouravRusiya30_UberAnalytics)
 
 The purpose of this project is to gather data from online taxi cab and transportation network company, in our case Uber, from various sources, enrich the collected data
 and deliver it to Data Science team for further analytics.
