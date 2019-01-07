@@ -63,6 +63,5 @@ object Application  extends SparkConfig{
 //Publishing data to Kafka topic
     Producer.toKafkaTopic("topPassenger", topPass)
     Producer.toKafkaTopic("topDriver", topDriver)
-
   }
 }
