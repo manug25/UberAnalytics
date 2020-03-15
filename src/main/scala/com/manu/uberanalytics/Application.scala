@@ -13,9 +13,9 @@ object Application  extends SparkConfig{
 
   def main(args: Array[String]): Unit = {
 
-    val driverPath = "F:\\data-engineer-applicant-test-7\\src\\main\\scala\\resources\\driver.csv"
-    val passengerPath = "F:\\data-engineer-applicant-test-7\\src\\main\\scala\\resources\\passenger.csv"
-    val bookingPath = "F:\\data-engineer-applicant-test-7\\src\\main\\scala\\resources\\booking.csv"
+    val driverPath = "s3n://manu.uberdata/driver.csv"
+    val passengerPath = "s3n://manu.uberdata/passenger.csv"
+    val bookingPath = "s3n://manu.uberdata/booking.csv"
 
     val driverTableName = "driver"
     val passengerTableName = "passenger"

@@ -10,7 +10,7 @@ object Producer {
        .format("kafka")
        .option("topic", topicName)
        .option("kafka.bootstrap.server", "localhost:9092")
-       .option("checkpointLocation", "<Path to checkpoint location>")
+       .option("checkpointLocation", "/batchCheckpoint")
    } catch {
      case e: Exception => e.printStackTrace()
    }

@@ -6,6 +6,7 @@
 
     <groupId>groupId</groupId>
     <artifactId>UberAnalytics</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <repositories>
@@ -19,6 +20,12 @@
             </snapshots>
         </repository>
     </repositories>
+
+    <properties>
+        <scala.version>2.13.1</scala.version>
+        <scala.compat.version>2.13.1</scala.compat.version>
+        <scala.binary.version>2.13</scala.binary.version>
+    </properties>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11 -->
@@ -35,21 +42,31 @@
         </dependency>
 
         <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>2.11.12</version>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_2.11</artifactId>
+            <version>2.3.2</version>
+            <scope>provided</scope>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming -->
         <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
-            <version>0.10.1.0</version>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.11</artifactId>
+            <version>2.3.2</version>
+            <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.typesafe/config -->
         <dependency>
             <groupId>com.typesafe</groupId>
             <artifactId>config</artifactId>
-            <version>1.3.3</version>
+            <version>1.3.4</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka-0-10 -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka-0-10_2.12</artifactId>
+            <version>2.4.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -69,4 +86,3 @@
         </plugins>
     </build>
 </project>
-
