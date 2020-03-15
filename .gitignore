@@ -3,6 +3,7 @@
 *.iml
 *.iws
 *.log
+*.txt
 
 # Mac
 .DS_Store

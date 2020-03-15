@@ -1,16 +1,27 @@
 language: scala
-sudo: false # faster builds
-
+sudo: false
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
 deploy:
-  provider: codedeploy
-  access_key_id: System.getenv("AWS_ACCESS_KEY_ID")
-  secret_access_key: "YOUR AWS SECRET KEY"
-  bucket: "manu.uberdata"
-  key: latest/UberAnalytics-1.0-SNAPSHOT.jar
+- provider: s3
+  access_key_id: AKIA34Y37TCL4537N4EO
+  secret_access_key: &1
+    secure: MK/EvnPNH6bBHzwchZJxqLPJgsvI42PRx24R93XtQZaWpzqOm7gahoU7rGlxAirsFYl8xzJA87kkZpw5dtwpJ12QuXhMg6L7fBCGd0zw0VkQw5hUSfEONeold7YoNIuNHjvpIJgubV+4c2R8+3TdmgaxJEQL+e87G8DdavXkikGrJ05+zUcy47G3Ok40VzHEKeQrIdCdEkbEsblptI/dzExUCuqe//kv4FZ7Y0QszkzcNiTP3vLYkTek8dbmmsG+zRsDQ1zg0aOU6dWl96+ghkS8YYIPX42wJodWbj469z4/f0crJFCQh0qhSXOAHaztvMVI9yKExguUH35bL7RzEtiaItGc/rhu58izszJtqa77lpsMT7X6PjvXC5DmwaD7sgp+TGSqJPo5/SLGLbjruhvNiP4Rb1NXo1lpF5ayxdcV8jMyBSDqLQPyd5jM4NI3VDfAd8Am5NBMqoZV1aPQp3+kapawSp76ZhCjBC8jZt2GFOeALgQBqlbj1xJZFLp+vmDD8nB/hnlRHGLtPXiulWGmZ/WeemObqLss40gWASnYE2Rz96RIkTJWH2vAeURW/DTAJqQUFXNE9UrY1EQLfhHxosC1wu5V1RaLSs47Gj68U/j//5WN+nv+3FK+0ExETPPk4wEk3xaW/Kp9G/4OkX9uwdHauhyUoCP2TfQtjMs=
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: manug25/UberAnalytics
+    branch: manu
+  bucket: manu.uberdata
+- provider: codedeploy
+  access_key_id: AKIA34Y37TCL4537N4EO
+  secret_access_key: *1
+  bucket: manu.uberdata
+  key: ''
   bundle_type: jar
   application: UberAnalytics
   deployment_group: EC2CodeDeploy
-  on:
-    branch: manu
+  on: *2
+before_deploy:
+- mkdir -p dpl_cd_upload
+- mv '' dpl_cd_upload/''
