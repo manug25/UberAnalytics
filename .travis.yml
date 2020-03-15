@@ -3,3 +3,14 @@ sudo: false # faster builds
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: codedeploy
+  access_key_id: System.getenv("AWS_ACCESS_KEY_ID")
+  secret_access_key: "YOUR AWS SECRET KEY"
+  bucket: "manu.uberdata"
+  key: latest/UberAnalytics-1.0-SNAPSHOT.jar
+  bundle_type: jar
+  application: UberAnalytics
+  deployment_group: EC2CodeDeploy
+  on:
+    branch: manu
